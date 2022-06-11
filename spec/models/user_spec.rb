@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録' do
-    context '新規登録できない場合' do
+    context '新規登録できる場合' do
     it '全ての情報が存在すれば登録できる' do
       expect(@user).to be_valid
     end
