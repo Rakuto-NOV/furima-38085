@@ -127,13 +127,13 @@
       新規投稿商品
     </div>
     <ul class='item-lists'>
-    <% if @products.present? %>
+    <% if @items.present? %>
 
-       <% @products.each do |product|%>
+       <% @items.each do |item|%>
       <li class='list'>
-        <%= link_to item_path(product.id) do %>
+        <%= link_to item_path(item.id) do %>
         <div class='item-img-content'>
-          <%= image_tag product.image, class: "item-img" %>
+          <%= image_tag item.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <%# <% if @user_product %>
@@ -146,10 +146,10 @@
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= product.name %>
+            <%= item.name %>
           </h3>
           <div class='item-price'>
-            <span><%= product.price %>円<br><%= product.cost.name %></span>
+            <span><%= item.price %>円<br><%= item.cost.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
