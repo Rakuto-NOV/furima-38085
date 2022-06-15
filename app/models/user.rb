@@ -16,6 +16,6 @@ class User < ApplicationRecord
     validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'Password No alphanumeric mixture' }
   end
 
-  has_many :products
+  has_many :items
   #  has_many :purchase_histories
 end
