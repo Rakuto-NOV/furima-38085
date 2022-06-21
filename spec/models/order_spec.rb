@@ -53,22 +53,22 @@ RSpec.describe Order, type: :model do
       expect(@item_form.errors.full_messages).to include("Phone number can't be blank")
     end
     it '電話番号が10桁未満だと購入できない' do
-      @item_form.phone_number = 0o00000000
+      @item_form.phone_number = 123456789
       @item_form.valid?
       expect(@item_form.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it '電話番号が12桁以上だと購入できない' do
-      @item_form.phone_number = 0o00000000000
+      @item_form.phone_number = 123456789012
       @item_form.valid?
       expect(@item_form.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it '電話番号がハイフンありだと購入できない' do
-      @item_form.phone_number = 0o00 - 0o000 - 0o000
+      @item_form.phone_number = 1234 - 567 - 890
       @item_form.valid?
       expect(@item_form.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
     it '電話番号が全角数字だと購入できない' do
-      @item_form.phone_number = '０００００００００００'
+      @item_form.phone_number = '１２３４５６７８９０'
       @item_form.valid?
       expect(@item_form.errors.full_messages).to include('Phone number is invalid. Input only number')
     end
@@ -76,6 +76,16 @@ RSpec.describe Order, type: :model do
       @item_form.token = nil
       @item_form.valid?
       expect(@item_form.errors.full_messages).to include("Token can't be blank")
+    end
+    it 'ユーザーが紐付いていなければ投稿できない' do
+      @item_form.user_id = nil
+      @item_form.valid?
+      expect(@item_form.errors.full_messages).to include("User can't be blank")
+    end
+    it '商品が紐付いていなければ投稿できない' do
+      @item_form.item_id = nil
+      @item_form.valid?
+      expect(@item_form.errors.full_messages).to include("Item can't be blank")
     end
   end
 end

@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     @items = Item.all.order(created_at: :desc)
-    @order = Order.new
   end
 
   def new
@@ -32,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @order = Order.new
   end
 
   def destroy
