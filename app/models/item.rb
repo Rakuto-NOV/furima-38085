@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :arrival
   has_one_attached :image
   belongs_to :user
+  has_one    :order
 
   validates :image, :name, :description, :category_id, :status_id, :cost_id, :prefecture_id, :arrival_id, :price,
             presence: true
