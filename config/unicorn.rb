@@ -4,7 +4,7 @@ worker_processes 1
 
 working_directory "#{app_path}/current"
 
-pid "#{app_path}/tmp/pids/unicorn.pid"
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 
 listen "#{app_path}/tmp/sockets/unicorn.sock"
 
