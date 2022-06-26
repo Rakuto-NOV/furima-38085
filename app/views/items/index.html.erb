@@ -128,7 +128,6 @@
     </div>
     <ul class='item-lists'>
     <% if @items.present? %>
-
        <% @items.each do |item|%>
       <li class='list'>
         <%= link_to item_path(item.id) do %>
@@ -174,8 +173,6 @@
         <% end %>
       </li>
       <% end %>
-
-
     </ul>
   </div>
   <%# /商品一覧 %>
