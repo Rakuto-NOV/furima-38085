@@ -8,6 +8,13 @@ ja:
         last_name_kana: 苗字(カタカナ)
         first_name_kana: 名前(カタカナ)
         birth_day: 生年月日
-      tweet:
-        text: テキスト
+      item:
         image: 画像
+        name: 商品名
+        description: 商品の説明
+        price: 価格
+        category_id: カテゴリー
+        status_id: 商品の状態
+        cost_id: 配送料の負担
+        prefecture_id: 発送元の地域
+        arrival_id: 発送までの日数
