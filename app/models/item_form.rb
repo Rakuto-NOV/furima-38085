@@ -5,10 +5,10 @@ class ItemForm
   # バリデーション
   with_options presence: true do
     validates :user_id, :item_id, :city, :address, :token
-    validates :post_code, format: { with: /\A\d{3}-\d{4}\z/, message: 'Input correctly' }
-    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid. Input only number' }
+    validates :post_code, format: { with: /\A\d{3}-\d{4}\z/, message: "は半角数字且つハイフンありで入力してください" }
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'は半角数字且つハイフンなしで入力してください' }
   end
-  validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
+  validates :prefecture_id, numericality: { other_than: 1, message: 'が未選択です' }
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
