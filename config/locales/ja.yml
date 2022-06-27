@@ -19,3 +19,15 @@ ja:
         prefecture_id: 発送元の地域
         arrival_id: 発送までの日数
         user: ユーザー
+
+  activemodel:
+    attributes:
+      item_form:
+        city: 市区町村
+        address: 番地
+        post_code: 郵便番号
+        phone_number: 電話番号
+        prefecture_id: 都道府県
+        token: カード情報
+        user_id: ユーザー
+        item_id: 商品
